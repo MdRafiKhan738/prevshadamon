@@ -4,6 +4,7 @@ import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
 import { Toaster } from "react-hot-toast";
 import RegisterServiceWorker from "@/components/RegisterServiceWorker"
+import FacebookSdk from "@/components/FacebookSdk";
 
 const SITE_TITLE = "Shadamon.com | দ্রুত ও সহজ কেনাবেচার স্মার্ট মার্কেটপ্লেস";
 const SITE_DESCRIPTION = "The ultimate marketing platform";
@@ -122,47 +123,16 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              /**
-               * ------------------------------------------------------------------
-               * DEVELOPED BY: 
-               * WEBSITE:     
-               * EMAIL:       
-               * ------------------------------------------------------------------
-               */
               console.log(
-                "%c  ",
-                "background: #1a1a1a; color: #00ff00; font-size: 1.2rem; font-weight: bold; padding: 10px; border-radius: 5px; border: 1px solid #00ff00;"
-              );
-              console.log(
-                "%c WEBSITE: ",
-                "background: #1a1a1a; color: #00ff00; font-size: 1.2rem; font-weight: bold; padding: 10px; border-radius: 5px; border: 1px solid #00ff00;"
-              );
-              console.log(
-                "%c EMAIL:,
-                "background: #1a1a1a; color: #00ff00; font-size: 1.2rem; font-weight: bold; padding: 10px; border-radius: 5px; border: 1px solid #00ff00;"
-              );
-              console.log(
-                "%c Professional Web Development & Design Solutions ",
+                "%c Shadamon %c",
+                "background: #1a1a1a; color: #00ff00; font-size: 1.2rem; font-weight: bold; padding: 10px; border-radius: 5px; border: 1px solid #00ff00;",
                 "color: #888; font-style: italic; font-size: 0.9rem;"
               );
             `,
           }}
         />
         <RegisterServiceWorker />
-        <div id="fb-root"></div>
-        <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.fbAsyncInit = function() {
-              FB.init({,
-                appId      : '352947546661410',
-                cookie     : true,
-                xfbml      : true,
-                version    : 'v18.0'
-              });
-            };
-          `
-        }} />
+        <FacebookSdk />
 
         <script src="https://accounts.google.com/gsi/client" async defer></script>
 
